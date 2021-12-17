@@ -26,9 +26,6 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
-                        <NavLink to="/occasion">Occasion</NavLink>
-                        <NavLink to="/contact">Contact</NavLink>
                     </Nav>
                     {/* <Nav>
                         {
