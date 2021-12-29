@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Creamy Drip",
+        "img": "https://i.ibb.co/m8PJq5q/creamy-drip-black-forest.png",
+        "price": 120,
+        "flavor": "Black Forest",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "name": "Cream Rose Drop",
+        "img": "https://i.ibb.co/THvrk1H/roses-on-top-black-forest.png",
+        "price": 110,
+        "flavor": "Black Forest",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "name": "Cream Chocolate",
+        "img": "https://i.ibb.co/P9Tcz6q/black-forest-chocolate.png",
+        "price": 90,
+        "flavor": "Black Forest",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "name": "Creamy Oreo Drip",
+        "img": "https://i.ibb.co/RHP08Lx/black-forest-oreo.png",
+        "price": 100,
+        "flavor": "Black Forest",
+        "description": "",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "name": "Designer Cherry",
+        "img": "https://i.ibb.co/V9nWSPs/black-forest-designer.png",
+        "price": 105,
+        "flavor": "Black Forest",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "name": "Creamy Cherry",
+        "img": "https://i.ibb.co/2gXSpwt/cream-cherry-black-forest.png",
+        "price": 95,
+        "flavor": "Black Forest",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    }
+]

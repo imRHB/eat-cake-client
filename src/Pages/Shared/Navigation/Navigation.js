@@ -1,18 +1,17 @@
-import { faSignInAlt, faSignOutAlt, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSignInAlt, faSignOutAlt, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavLink } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import useFirebase from "../../../hooks/useFirebase";
 
-const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
-const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
-const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
+// const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
+// const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
+// const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
 const Navigation = () => {
     // const { user, logout } = useAuth();
-
-    const handleLogin = () => {
-        console.log("login clicked");
-    }
+    const { user, logout } = useFirebase();
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
@@ -25,7 +24,17 @@ const Navigation = () => {
 
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink to="/home">Home</NavLink>
+                        {/* <NavLink to="/home">Home</NavLink>
+                        <NavLink to="/cake">Cake</NavLink> */}
+                        <Link to="/home">Home</Link>
+                        <Link to="/cake">Cake</Link>
+                        <Link to="/login">Login</Link>
+                        {/* <Link to="/register">Register</Link> */}
+                        {
+                            user.email && <>
+                                <Button onClick={logout}>Logout</Button>
+                            </>
+                        }
                     </Nav>
                     {/* <Nav>
                         {

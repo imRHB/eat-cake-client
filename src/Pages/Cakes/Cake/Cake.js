@@ -3,18 +3,18 @@ import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Cake = (props) => {
-    const { _id, name, price } = props.cake;
+    const { _id, name, img, price } = props.cake;
     return (
         <Col>
             <Card className="text-center">
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                         ${price}
                     </Card.Text>
                 </Card.Body>
-                <Link to={`/cakes/${_id}`}>
+                <Link to={`/cake/${_id}`}>
                     <Button>Details</Button>
                 </Link>
             </Card>

@@ -7,13 +7,13 @@ const CakeDetails = () => {
 
     const [cake, setCake] = useState({});
 
-    const { name, price } = cake;
+    const { name, img, price, flavor, description, ingredients } = cake;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cakes/${id}`)
+        fetch(`http://localhost:5000/cake/${id}`)
             .then(res => res.json())
             .then(result => setCake(result));
-    }, []);
+    }, [id]);
 
     return (
         <div>
@@ -23,7 +23,7 @@ const CakeDetails = () => {
                 <Row xs={1} md={1} xl={2} className="g-5">
                     <Col className="col-md-12 col-lg-6 col-xl-6">
                         <div className="rounded-3">
-                            <img className="img-fluid rounded-3" src="" alt="" />
+                            <img className="img-fluid rounded-3" src={img} alt="" />
                         </div>
                     </Col>
 
@@ -33,11 +33,17 @@ const CakeDetails = () => {
                         <h3 className="fs-2 fw-bold text-info text-uppercase">${price}</h3>
 
                         <div className="bg-light rounded-3 p-4 my-4">
-                            <p>Flourless chocolate with cherry filling, decorated with whipped cream and chocolate shavings.</p>
+                            <p>{flavor}</p>
+                            <p>{description}</p>
                         </div>
 
                         <div className="bg-light rounded-3 p-4 my-4">
-                            <p>Ingredients</p>
+                            <p>{ingredients}</p>
+                            {/* <ul>
+                                {
+                                    ingredients.split(', ').map(igrd => <li>{igrd}</li>)
+                                }
+                            </ul> */}
                         </div>
 
                         {/* <div className="bg-light p-4 rounded-3">

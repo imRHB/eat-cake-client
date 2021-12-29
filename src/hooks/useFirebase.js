@@ -1,6 +1,14 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { useEffect } from "react";
+import { useState } from "react";
+import initializeFirebase from "../Firebase/firebase.init";
+
+initializeFirebase();
 
 const useFirebase = () => {
+    const [user, setUser] = useState({});
+    const [error, setError] = useState('');
+
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
@@ -8,14 +16,24 @@ const useFirebase = () => {
     const loginWithGoogle = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                setUser(result.user);
             })
-        /* .catch(error => {
-            const error = error.message;
-            console.log(error);
-        }) */
+            .catch(error => {
+                setError(error.message);
+            })
     };
+
+    useEffect(() => {
+        const unsubscribed = onAuthStateChanged(auth, user => {
+            if ((user)) {
+                setUser(user);
+            }
+            else {
+                setUser({});
+            }
+        })
+        return () => unsubscribed;
+    }, []);
 
     const logout = () => {
         signOut(auth)
@@ -23,11 +41,13 @@ const useFirebase = () => {
                 console.log('logged out');
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
     };
 
     return {
+        user,
+        error,
         loginWithGoogle,
         logout
     }
