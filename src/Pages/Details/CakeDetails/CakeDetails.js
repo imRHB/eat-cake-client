@@ -16,7 +16,7 @@ const CakeDetails = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="my-5">
             <Container>
                 <h2 className="text-center fs-1 fw-bold text-secondary my-5">Cake Details</h2>
 

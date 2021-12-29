@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useFirebase from "../../../hooks/useFirebase";
+import styles from './Navigation.module.css';
 
 // const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
 // const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
@@ -23,7 +24,7 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className={`${'me-auto'} ${styles.navbarNav}`}>
                         {/* <NavLink to="/home">Home</NavLink>
                         <NavLink to="/cake">Cake</NavLink> */}
                         <Link to="/home">Home</Link>

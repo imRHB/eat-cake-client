@@ -1,14 +1,14 @@
 .navbar {
     padding: 0;
 }
-.navbar-nav a {
+.navbarNav a {
     font-size: 18px;
     font-weight: 500;
     color: #2C3E50;
     text-decoration: none;
     padding: 8px 12px;
 }
-.navbar-nav a:hover {
+.navbarNav a:hover {
     color: #8A2BE2;
     background-color: #eee;
 }

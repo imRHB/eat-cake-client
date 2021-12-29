@@ -13,10 +13,14 @@ const Cake = (props) => {
                     <Card.Text>
                         ${price}
                     </Card.Text>
+
+                    <Card.Text>
+                        <Link to={`/cake/${_id}`}>
+                            <Button>Details</Button>
+                        </Link>
+                    </Card.Text>
+
                 </Card.Body>
-                <Link to={`/cake/${_id}`}>
-                    <Button>Details</Button>
-                </Link>
             </Card>
         </Col >
     );
