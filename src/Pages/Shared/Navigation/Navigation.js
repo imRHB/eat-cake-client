@@ -27,11 +27,18 @@ const Navigation = () => {
                     <Nav className={`${'me-auto'} ${styles.navbarNav}`}>
                         {/* <NavLink to="/home">Home</NavLink>
                         <NavLink to="/cake">Cake</NavLink> */}
-                        <Link to="/home">Home</Link>
-                        <Link to="/cake">Cake</Link>
-                        <Link to="/contact">Contact</Link>
-                        <Link to="/login">Login</Link>
+                        <Link to="home">Home</Link>
+                        <Link to="cake">Cake</Link>
+                        <Link to="contact">Contact</Link>
+                        <Link to="login">Login</Link>
                         {/* <Link to="/register">Register</Link> */}
+                        <Link to="dashboard">Dashboard</Link>
+                        <Link to="manage-products">manage-products</Link>
+                        <Link to="manage-order">manage-order</Link>
+                        <Link to="my-order">my-order</Link>
+                        <Link to="add-review">add-review</Link>
+
+                        <Link to="test">Test</Link>
                         {
                             user.email && <>
                                 <Button onClick={logout}>Logout</Button>

@@ -33,7 +33,7 @@ const useFirebase = () => {
             }
         })
         return () => unsubscribed;
-    }, []);
+    }, [auth]);
 
     const logout = () => {
         signOut(auth)

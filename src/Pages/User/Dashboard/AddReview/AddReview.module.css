@@ -1,0 +1,11 @@
+.addReviewForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addReviewForm input, textarea {
+    width: 360px;
+    margin: 8px;
+    padding: 4px;
+}
