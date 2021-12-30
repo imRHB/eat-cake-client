@@ -6,7 +6,7 @@ const Cake = (props) => {
     const { _id, name, img, price } = props.cake;
     return (
         <Col>
-            <Card className="text-center">
+            <Card className="text-center border-0 bg-light">
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
@@ -16,7 +16,7 @@ const Cake = (props) => {
 
                     <Card.Text>
                         <Link to={`/cake/${_id}`}>
-                            <Button>Details</Button>
+                            <Button variant="secondary">Details</Button>
                         </Link>
                     </Card.Text>
 

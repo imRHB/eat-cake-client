@@ -16,7 +16,7 @@ const linkedin = <FontAwesomeIcon icon={faLinkedin} />;
 const Footer = () => {
 
     return (
-        <div className={`${'py-5'} ${styles.footerArea}`}>
+        <div className={`${'py-5 bg-light'} ${styles.footerArea}`}>
             <Container>
                 <Row xs={1} sm={1} md={2} lg={2} xl={4} className="g-4">
                     <Col>

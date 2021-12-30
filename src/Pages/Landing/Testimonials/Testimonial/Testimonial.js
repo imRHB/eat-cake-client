@@ -11,7 +11,7 @@ const Testimonial = (props) => {
 
     return (
         <Col>
-            <Card className={`${'h-100 p-4 border-0 rounded-3 testimonial-card shadow-sm'} ${styles.testimonialCard}`}>
+            <Card className={`${'h-100 p-4 border-1 rounded-3 testimonial-card'} ${styles.testimonialCard}`}>
                 <div className="d-flex align-items-center">
                     <div>
                         <Card.Title><span className="fw-bold">{userIcon}</span></Card.Title>
