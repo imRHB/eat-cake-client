@@ -7,6 +7,8 @@ const CakeDetails = () => {
 
     const [cake, setCake] = useState({});
 
+    console.log(cake);
+
     const { name, img, price, flavor, description, ingredients } = cake;
 
     useEffect(() => {
@@ -32,18 +34,21 @@ const CakeDetails = () => {
 
                         <h3 className="fs-2 fw-bold text-info text-uppercase">${price}</h3>
 
-                        <div className="bg-light rounded-3 p-4 my-4">
-                            <p>{flavor}</p>
-                            <p>{description}</p>
-                        </div>
+                        <p>Flavor: {flavor}</p>
 
                         <div className="bg-light rounded-3 p-4 my-4">
+                            <h4>Ingredients</h4>
                             <p>{ingredients}</p>
                             {/* <ul>
                                 {
                                     ingredients.split(', ').map(igrd => <li>{igrd}</li>)
                                 }
                             </ul> */}
+                        </div>
+
+                        <div className="bg-light rounded-3 p-4 my-4">
+                            <h4>Description</h4>
+                            <p>{description}</p>
                         </div>
 
                         {/* <div className="bg-light p-4 rounded-3">
