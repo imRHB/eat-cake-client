@@ -4,15 +4,22 @@ import { Button, Container, Table } from "react-bootstrap";
 const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
 
-    const handleDeleteOrder = () => {
-        console.log('deleted');
-    };
-
     useEffect(() => {
         fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [orders]);
+
+    const handleDeleteOrder = cakeId => {
+        console.log(cakeId);
+        fetch(`http://localhost:5000/orders/${cakeId}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+
+            })
+    };
 
     return (
         <div>
@@ -26,8 +33,8 @@ const ManageOrder = () => {
                         <tr>
                             <th>#</th>
                             <th>Image</th>
-                            <th>Bouquet Title</th>
-                            <th>Bouquet Price</th>
+                            <th>Title</th>
+                            <th>Cake Price</th>
                             <th>User Name</th>
                             <th>User Email</th>
                             <th>Status</th>
