@@ -7,7 +7,7 @@ import styles from './Testimonial.module.css';
 const userIcon = <FontAwesomeIcon icon={faUser} />;
 
 const Testimonial = (props) => {
-    const { name, comment } = props.testimonial;
+    const { name, comment } = props.review;
 
     return (
         <Col>

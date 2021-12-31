@@ -5,12 +5,12 @@ import { Container, Row } from "react-bootstrap";
 import Testimonial from "../Testimonial/Testimonial";
 
 const Testimonials = () => {
-    const [testimonials, setTestimonials] = useState([]);
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/testimonial')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
-            .then(data => setTestimonials(data));
+            .then(data => setReviews(data));
     }, []);
 
     return (
@@ -20,9 +20,9 @@ const Testimonials = () => {
 
                 <Row xs={1} sm={1} md={2} lg={3} xl={3} className="g-5">
                     {
-                        testimonials.map(testimonial => <Testimonial
-                            key={testimonial._id}
-                            testimonial={testimonial}
+                        reviews.map(review => <Testimonial
+                            key={review._id}
+                            review={review}
                         ></Testimonial>)
                     }
                 </Row>

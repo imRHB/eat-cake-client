@@ -17,6 +17,7 @@ import ManageOrder from "./Pages/User/Dashboard/ManageOrder/ManageOrder";
 import MyOrder from "./Pages/User/Dashboard/MyOrder/MyOrder";
 import AddReview from "./Pages/User/Dashboard/AddReview/AddReview";
 import AddProduct from "./Pages/User/Dashboard/AddProduct/AddProduct";
+import PlaceOrder from "./Pages/Details/PlaceOrder/PlaceOrder";
 // import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 // import Register from "./Pages/User/Register/Register";
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="my-order" element={<MyOrder />} />
             <Route path="add-review" element={<AddReview />} />
             <Route path="add-product" element={<AddProduct />} />
+            <Route path="place-order/:cakeId" element={<PlaceOrder />} />
 
             <Route path="test" element={<Test />} />
             <Route path="/login" element={<Login />} />

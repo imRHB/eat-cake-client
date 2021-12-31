@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
 
 const CakeDetails = () => {
     const { id } = useParams();
@@ -9,7 +9,7 @@ const CakeDetails = () => {
 
     console.log(cake);
 
-    const { title, img, price, flavor, description, ingredients } = cake;
+    const { _id, title, img, price, flavor, description, ingredients } = cake;
 
     useEffect(() => {
         fetch(`http://localhost:5000/cake/${id}`)
@@ -32,7 +32,7 @@ const CakeDetails = () => {
                     <Col className="col-md-12 col-lg-6 col-xl-6">
                         <h1 className="fs-2 fw-bold text-info text-uppercase">{title}</h1>
 
-                        <h3 className="fs-2 fw-bold text-info text-uppercase">${price}</h3>
+                        <h3 className="fs-2 fw-bold text-primary text-uppercase">${price}</h3>
 
                         <p>Flavor: {flavor}</p>
 
@@ -51,8 +51,8 @@ const CakeDetails = () => {
                             <p>{description}</p>
                         </div>
 
-                        {/* <div className="bg-light p-4 rounded-3">
-                            <h2>${price}</h2>
+                        <div>
+
                             <Link to={`/place-order/${_id}`}>
                                 <Button
                                     variant="success"
@@ -60,7 +60,7 @@ const CakeDetails = () => {
                                     Order Now
                                 </Button>
                             </Link>
-                        </div> */}
+                        </div>
                     </Col>
                 </Row>
             </Container>
