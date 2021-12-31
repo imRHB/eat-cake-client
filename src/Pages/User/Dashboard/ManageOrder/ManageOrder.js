@@ -10,6 +10,21 @@ const ManageOrder = () => {
             .then(data => setOrders(data));
     }, [orders]);
 
+    const handleUpdateStatus = cakeId => {
+        console.log(cakeId);
+        fetch(`http://localhost:5000/orders/${cakeId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'Delivered' })
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+    };
+
     const handleDeleteOrder = cakeId => {
         console.log(cakeId);
         fetch(`http://localhost:5000/orders/${cakeId}`, {
@@ -52,7 +67,7 @@ const ManageOrder = () => {
                                 <td>{order.displayName}</td>
                                 <td>{order.email}</td>
                                 <td>{order.status}</td>
-                                <td><Button variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button onClick={() => handleUpdateStatus(order.status)} variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
                             </tr>)
                         }
                     </tbody>

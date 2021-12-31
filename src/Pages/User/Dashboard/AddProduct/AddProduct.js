@@ -7,8 +7,6 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
-
         fetch(``, {
             method: 'POST',
             headers: {
