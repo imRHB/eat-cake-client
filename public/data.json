@@ -1,6 +1,6 @@
 [
     {
-        "name": "Creamy Drip",
+        "title": "Creamy Drip Cake",
         "img": "https://i.ibb.co/m8PJq5q/creamy-drip-black-forest.png",
         "price": 120,
         "flavor": "Black Forest",
@@ -8,7 +8,7 @@
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     },
     {
-        "name": "Cream Rose Drop",
+        "title": "Cream Rose Drop Cake",
         "img": "https://i.ibb.co/THvrk1H/roses-on-top-black-forest.png",
         "price": 110,
         "flavor": "Black Forest",
@@ -16,7 +16,7 @@
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     },
     {
-        "name": "Cream Chocolate",
+        "title": "Cream Chocolate Cake",
         "img": "https://i.ibb.co/P9Tcz6q/black-forest-chocolate.png",
         "price": 90,
         "flavor": "Black Forest",
@@ -24,15 +24,15 @@
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     },
     {
-        "name": "Creamy Oreo Drip",
+        "title": "Creamy Oreo Drip Cake",
         "img": "https://i.ibb.co/RHP08Lx/black-forest-oreo.png",
         "price": 100,
         "flavor": "Black Forest",
-        "description": "",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     },
     {
-        "name": "Designer Cherry",
+        "title": "Designer Cherry Cake",
         "img": "https://i.ibb.co/V9nWSPs/black-forest-designer.png",
         "price": 105,
         "flavor": "Black Forest",
@@ -40,11 +40,107 @@
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     },
     {
-        "name": "Creamy Cherry",
+        "title": "Creamy Cherry Cake",
         "img": "https://i.ibb.co/2gXSpwt/cream-cherry-black-forest.png",
         "price": 95,
         "flavor": "Black Forest",
         "description": "Flour with chocolate filling, decorated with whipped cream and chocolate shavings.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Red Strawberry Sponge Cake",
+        "img": "https://i.ibb.co/ykxZ5GL/red-strawberry-sponge-cake.png",
+        "price": 125,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Mouth Watering Strawberry Cake",
+        "img": "https://i.ibb.co/cLM2b1m/mouth-watering-strawberry-cake.png",
+        "price": 140,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Cream Drop Pineapple Cake",
+        "img": "https://i.ibb.co/wrR77Qx/cream-drop-pineapple-cake.png",
+        "price": 100,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Love Strawberry Cake",
+        "img": "https://i.ibb.co/whrKBw9/in-love-strawberry-cake.png",
+        "price": 90,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Heart Beat Vanilla Cake",
+        "img": "https://i.ibb.co/bm2GXF9/heart-beat-vanilla-cake.png",
+        "price": 110,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Pink Strawberry Cream Cake",
+        "img": "https://i.ibb.co/v1Jszvf/pink-strawberry-cream-cake.png",
+        "price": 85,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Creamy Strawberry Fruit Cake",
+        "img": "https://i.ibb.co/Lz3NXww/creamy-strawberry-fruit-cake.png",
+        "price": 95,
+        "flavor": "Strawberry",
+        "description": "Flour with strawberry filling, decorated with whipped cream and chocolate strawberry.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Chocolate Swirl Fit Cheesecake",
+        "img": "https://i.ibb.co/8NGdcpB/chocolate-swirl-fit-cheesecake.png",
+        "price": 120,
+        "flavor": "Chocolate",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate cheese.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Choco Cheese Delight Cake",
+        "img": "https://i.ibb.co/TmQPQvw/choco-cheese-delight-cake.png",
+        "price": 110,
+        "flavor": "Chocolate",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate cheese.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Oreo Cheesecake",
+        "img": "https://i.ibb.co/dWZmCwT/oreo-cheesecake.png",
+        "price": 90,
+        "flavor": "Chocolate",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate cheese.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Choco Walnut Cheesecake",
+        "img": "https://i.ibb.co/6XS8yJy/choco-walnut-cheesecake.png",
+        "price": 85,
+        "flavor": "Chocolate",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate cheese.",
+        "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
+    },
+    {
+        "title": "Chocolate Cheesecake",
+        "img": "https://i.ibb.co/yWGtFgT/chocolate-cheesecake.png",
+        "price": 75,
+        "flavor": "Chocolate",
+        "description": "Flour with chocolate filling, decorated with whipped cream and chocolate cheese.",
         "ingredients": "Flour, White Sugar, Egg, Milk, Vegetable Oil, Vanilla Extract, Whipping Cream, Baking Powder"
     }
 ]

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Col, Container, Row } from "react-bootstrap";
-import styles from './Category.module.css';
+import { Col, Container, Row } from "react-bootstrap";
+// import styles from './Category.module.css';
 
 import slide1 from '../../../../images/banner/slide-1.jpg';
 import slide2 from '../../../../images/banner/slide-2.jpg';

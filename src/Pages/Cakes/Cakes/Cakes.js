@@ -22,7 +22,7 @@ const Cakes = () => {
     return (
         <div className="my-5">
             <Container>
-                <h2 className="text-center my-5 fw-bold">Top Selling</h2>
+                <h2 className="text-center my-5 fw-bold">Available Cake</h2>
                 <Row xs={1} sm={1} md={2} lg={3} xl={4} className="g-4">
                     {
                         cakes.map(cake => <Cake

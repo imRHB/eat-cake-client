@@ -8,7 +8,7 @@ const ContactForm = () => {
             <Container className="py-5">
                 <h2 className="fw-bold text-center">Let Us Handle Your Program</h2>
 
-                <Form className={`${'mx-auto my-5 text-center contact-form'} ${styles.contactForm}`}>
+                <Form className={`${'mx-auto my-5 text-center'} ${styles.contactForm}`}>
                     <Row className="mb-0">
                         <Form.Group as={Col} controlId="formGridFirstName">
                             <Form.Label></Form.Label>
@@ -33,10 +33,12 @@ const ContactForm = () => {
                         </Form.Group>
                     </Row>
 
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label></Form.Label>
-                        <Form.Control as="textarea" rows={5} placeholder="Your Message" />
-                    </Form.Group>
+                    <Row className="mb-0">
+                        <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
+                            <Form.Label></Form.Label>
+                            <Form.Control as="textarea" rows={5} placeholder="Your Message" />
+                        </Form.Group>
+                    </Row>
 
                     <Button variant="success" className="mt-3">
                         Send Message

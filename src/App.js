@@ -16,6 +16,7 @@ import ManageProducts from "./Pages/User/Dashboard/ManageProducts/ManageProducts
 import ManageOrder from "./Pages/User/Dashboard/ManageOrder/ManageOrder";
 import MyOrder from "./Pages/User/Dashboard/MyOrder/MyOrder";
 import AddReview from "./Pages/User/Dashboard/AddReview/AddReview";
+import AddProduct from "./Pages/User/Dashboard/AddProduct/AddProduct";
 // import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 // import Register from "./Pages/User/Register/Register";
 
@@ -37,7 +38,9 @@ function App() {
             <Route path="manage-order" element={<ManageOrder />} />
             <Route path="my-order" element={<MyOrder />} />
             <Route path="add-review" element={<AddReview />} />
+            <Route path="add-product" element={<AddProduct />} />
 
+            <Route path="test" element={<Test />} />
             <Route path="/login" element={<Login />} />
             {/* <Route path="/register" element={<Register />} /> */}
 

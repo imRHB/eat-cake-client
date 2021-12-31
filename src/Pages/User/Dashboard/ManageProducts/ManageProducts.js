@@ -40,7 +40,7 @@ const ManageProducts = () => {
                             products.map((product, index) => <tr>
                                 <td>{index + 1}</td>
                                 <td><img src={product.img} style={{ width: '64px', height: '64px', border: '1px solid gray', borderRadius: '4px' }} alt="" /></td>
-                                <td>{product.name}</td>
+                                <td>{product.title}</td>
                                 <td>${product.price}</td>
                                 <td>In Stock</td>
                                 <td><Button onClick={() => handleDeleteProduct(product._id)} variant="danger" size="sm">DELETE</Button></td>

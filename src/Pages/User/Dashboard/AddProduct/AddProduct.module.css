@@ -1,0 +1,11 @@
+.addProductForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addProductForm input, textarea, select {
+    width: 360px;
+    margin: 8px;
+    padding: 4px;
+}

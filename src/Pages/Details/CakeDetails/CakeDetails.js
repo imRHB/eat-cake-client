@@ -9,7 +9,7 @@ const CakeDetails = () => {
 
     console.log(cake);
 
-    const { name, img, price, flavor, description, ingredients } = cake;
+    const { title, img, price, flavor, description, ingredients } = cake;
 
     useEffect(() => {
         fetch(`http://localhost:5000/cake/${id}`)
@@ -30,7 +30,7 @@ const CakeDetails = () => {
                     </Col>
 
                     <Col className="col-md-12 col-lg-6 col-xl-6">
-                        <h1 className="fs-2 fw-bold text-info text-uppercase">{name}</h1>
+                        <h1 className="fs-2 fw-bold text-info text-uppercase">{title}</h1>
 
                         <h3 className="fs-2 fw-bold text-info text-uppercase">${price}</h3>
 

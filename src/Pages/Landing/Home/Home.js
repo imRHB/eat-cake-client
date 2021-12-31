@@ -1,8 +1,8 @@
 import React from 'react';
-import Cakes from "../../Cakes/Cakes/Cakes";
 import ContactForm from "../../ContactForm/ContactForm";
 import Banner from "../Banner/Banner";
 import Category from "../Featured/Category/Category";
+import FeaturedCakes from "../Featured/FeaturedCakes/FeaturedCakes";
 import Testimonials from "../Testimonials/Testimonials/Testimonials";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Banner />
             <Category />
-            <Cakes />
+            <FeaturedCakes />
             <Testimonials />
             <ContactForm />
         </div>
