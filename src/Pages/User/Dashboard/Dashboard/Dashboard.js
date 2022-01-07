@@ -1,8 +1,24 @@
 import React from 'react';
+import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
+import { faHome, faPlus, faSignOutAlt, faTh, faThLarge, faThList, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import styles from './Dashboard.module.css';
+import useAuth from "../../../../hooks/useAuth";
+
+const homeIcon = <FontAwesomeIcon icon={faHome} />;
+const dashboardIcon = <FontAwesomeIcon icon={faTh} />;
+const reviewIcon = <FontAwesomeIcon icon={faCommentAlt} />;
+const listIcon = <FontAwesomeIcon icon={faThList} />;
+const plusIcon = <FontAwesomeIcon icon={faPlus} />;
+const userPlus = <FontAwesomeIcon icon={faUserPlus} />;
+const serviceIcon = <FontAwesomeIcon icon={faThLarge} />;
+const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
 const Dashboard = () => {
+    const { logout } = useAuth();
+
     return (
         <div className="my-5">
             <Container>
@@ -14,7 +30,20 @@ const Dashboard = () => {
                     <Row xs={1} sm={1} md={2} lg={2} xl={2} className="g-3 g-lg-4">
                         <Col xs={12} sm={12} md={4} lg={3} xl={3}>
                             <div className="bg-light rounded-3 py-4 border" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
-                                <Nav variant="light" className="flex-column dash-nav">
+                                <Nav variant="light" className={`${'flex-column'} ${styles.dashNav}`}>
+                                    <Link to="/home"><span className="me-3">{homeIcon}</span>Home</Link>
+
+                                    <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
+
+                                    <Link to="manage-products"><span className="me-3">{serviceIcon}</span>Manage Products</Link>
+
+                                    <Link to="manage-order"><span className="me-3">{serviceIcon}</span>Manage Order</Link>
+
+                                    <Link to="my-order"><span className="me-3">{listIcon}</span>My Order</Link>
+
+                                    <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
+
+                                    <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
 
                                 </Nav>
                             </div>
@@ -22,7 +51,7 @@ const Dashboard = () => {
 
                         <Col xs={12} sm={12} md={8} lg={9} xl={9}>
                             <div className="bg-light rounded-3 px-2 py-4 border">
-
+                                <Outlet />
                             </div>
                         </Col>
                     </Row>

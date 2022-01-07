@@ -11,7 +11,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import ContactForm from "./Pages/ContactForm/ContactForm";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Dashboard from "./Pages/User/Dashboard/Dashboard/Dashboard";
-import Test from "./Pages/Test/Test/Test";
+// import Test from "./Pages/Test/Test/Test";
 import ManageProducts from "./Pages/User/Dashboard/ManageProducts/ManageProducts";
 import ManageOrder from "./Pages/User/Dashboard/ManageOrder/ManageOrder";
 import MyOrder from "./Pages/User/Dashboard/MyOrder/MyOrder";
@@ -34,15 +34,25 @@ function App() {
             <Route path="cake/:id" element={<CakeDetails />} />
             <Route path="contact" element={<ContactForm />} />
 
-            <Route path="dashboard" element={<Dashboard />} />
+            {/* Dashboard */}
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="manage-products" element={<ManageProducts />} />
+              <Route path="manage-order" element={<ManageOrder />} />
+              <Route path="my-order" element={<MyOrder />} />
+              <Route path="add-review" element={<AddReview />} />
+              <Route path="add-product" element={<AddProduct />} />
+              <Route path="place-order/:cakeId" element={<PlaceOrder />} />
+            </Route>
+
+            {/* <Route path="dashboard" element={<Dashboard />} />
             <Route path="manage-products" element={<ManageProducts />} />
             <Route path="manage-order" element={<ManageOrder />} />
             <Route path="my-order" element={<MyOrder />} />
             <Route path="add-review" element={<AddReview />} />
             <Route path="add-product" element={<AddProduct />} />
-            <Route path="place-order/:cakeId" element={<PlaceOrder />} />
+            <Route path="place-order/:cakeId" element={<PlaceOrder />} /> */}
 
-            <Route path="test" element={<Test />} />
+            {/* <Route path="test" element={<Test />} /> */}
             <Route path="/login" element={<Login />} />
             {/* <Route path="/register" element={<Register />} /> */}
 

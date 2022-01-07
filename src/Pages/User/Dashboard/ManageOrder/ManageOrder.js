@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Container, Table } from "react-bootstrap";
+
+const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
 
 const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
@@ -11,7 +15,6 @@ const ManageOrder = () => {
     }, [orders]);
 
     const handleUpdateStatus = cakeId => {
-        console.log(cakeId);
         fetch(`http://localhost:5000/orders/${cakeId}`, {
             method: 'PUT',
             headers: {
@@ -67,7 +70,7 @@ const ManageOrder = () => {
                                 <td>{order.displayName}</td>
                                 <td>{order.email}</td>
                                 <td>{order.status}</td>
-                                <td><Button onClick={() => handleUpdateStatus(order.status)} variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button onClick={() => handleUpdateStatus(order._id)} variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="none" size="" className="border-danger border-2"><span className="text-danger">{deleteIcon}</span></Button></td>
                             </tr>)
                         }
                     </tbody>

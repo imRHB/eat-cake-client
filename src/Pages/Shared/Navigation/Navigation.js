@@ -33,13 +33,13 @@ const Navigation = () => {
                         <Link to="login">Login</Link>
                         {/* <Link to="/register">Register</Link> */}
                         <Link to="dashboard">Dashboard</Link>
-                        <Link to="manage-products">manage-products</Link>
+                        {/* <Link to="manage-products">manage-products</Link>
                         <Link to="manage-order">manage-order</Link>
                         <Link to="my-order">my-order</Link>
                         <Link to="add-review">add-review</Link>
                         <Link to="add-product">add-product</Link>
 
-                        <Link to="test">Test</Link>
+                        <Link to="test">Test</Link> */}
                         {
                             user.email && <>
                                 <Button onClick={logout}>Logout</Button>

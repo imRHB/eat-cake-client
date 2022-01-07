@@ -1,6 +1,10 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from "react-bootstrap";
 import useAuth from "../../../../hooks/useAuth";
+
+const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
 
 const MyOrder = () => {
     const { user } = useAuth();
@@ -10,7 +14,7 @@ const MyOrder = () => {
         fetch(`http://localhost:5000/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [orders]);
+    }, [orders, user.email]);
 
     const handleDeleteOrder = cakeId => {
         console.log(cakeId);
@@ -50,7 +54,7 @@ const MyOrder = () => {
                                 <td>{order.title}</td>
                                 <td>${order.price}</td>
                                 <td>{order.status}</td>
-                                <td><Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button onClick={() => handleDeleteOrder(order._id)} variant="none" size="" className="border-danger border-2"><span className="text-danger">{deleteIcon}</span></Button></td>
                             </tr>)
                         }
                     </tbody>
