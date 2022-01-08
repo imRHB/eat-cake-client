@@ -20,17 +20,17 @@ const Dashboard = () => {
     const { logout } = useAuth();
 
     return (
-        <div className="my-5">
-            <Container>
+        <div className="">
+            {/* <Container>
                 <h3 className="text-center fw-bold">Dashboard</h3>
-            </Container>
+            </Container> */}
 
             <Container fluid className="p-5">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="my-order">
-                    <Row xs={1} sm={1} md={2} lg={2} xl={2} className="g-3 g-lg-4">
+                    <Row xs={1} sm={1} md={2} lg={2} xl={2} className="g-0">
                         <Col xs={12} sm={12} md={4} lg={3} xl={3}>
-                            <div className="bg-light rounded-3 py-4 border" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
-                                <Nav variant="light" className={`${'flex-column'} ${styles.dashNav}`}>
+                            <div className="bg-dark py-4 border-0" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
+                                <Nav variant="dark" className={`${'flex-column'} ${styles.dashNav}`}>
                                     <Link to="/home"><span className="me-3">{homeIcon}</span>Home</Link>
 
                                     <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
@@ -50,7 +50,7 @@ const Dashboard = () => {
                         </Col>
 
                         <Col xs={12} sm={12} md={8} lg={9} xl={9}>
-                            <div className="bg-light rounded-3 px-2 py-4 border">
+                            <div className="px-2 py-4 bg-light">
                                 <Outlet />
                             </div>
                         </Col>

@@ -1,4 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import Home from "./Pages/Landing/Home/Home";
@@ -11,15 +14,12 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import ContactForm from "./Pages/ContactForm/ContactForm";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Dashboard from "./Pages/User/Dashboard/Dashboard/Dashboard";
-// import Test from "./Pages/Test/Test/Test";
 import ManageProducts from "./Pages/User/Dashboard/ManageProducts/ManageProducts";
 import ManageOrder from "./Pages/User/Dashboard/ManageOrder/ManageOrder";
 import MyOrder from "./Pages/User/Dashboard/MyOrder/MyOrder";
 import AddReview from "./Pages/User/Dashboard/AddReview/AddReview";
 import AddProduct from "./Pages/User/Dashboard/AddProduct/AddProduct";
 import PlaceOrder from "./Pages/Details/PlaceOrder/PlaceOrder";
-// import AuthProvider from "./contexts/AuthProvider/AuthProvider";
-// import Register from "./Pages/User/Register/Register";
 
 function App() {
   return (
@@ -44,15 +44,6 @@ function App() {
               <Route path="place-order/:cakeId" element={<PlaceOrder />} />
             </Route>
 
-            {/* <Route path="dashboard" element={<Dashboard />} />
-            <Route path="manage-products" element={<ManageProducts />} />
-            <Route path="manage-order" element={<ManageOrder />} />
-            <Route path="my-order" element={<MyOrder />} />
-            <Route path="add-review" element={<AddReview />} />
-            <Route path="add-product" element={<AddProduct />} />
-            <Route path="place-order/:cakeId" element={<PlaceOrder />} /> */}
-
-            {/* <Route path="test" element={<Test />} /> */}
             <Route path="/login" element={<Login />} />
             {/* <Route path="/register" element={<Register />} /> */}
 
