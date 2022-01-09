@@ -17,7 +17,6 @@ const MyOrder = () => {
     }, [orders, user.email]);
 
     const handleDeleteOrder = cakeId => {
-        console.log(cakeId);
         fetch(`http://localhost:5000/orders/${cakeId}`, {
             method: 'DELETE'
         })

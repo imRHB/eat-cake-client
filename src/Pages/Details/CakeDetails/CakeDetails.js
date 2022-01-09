@@ -7,8 +7,6 @@ const CakeDetails = () => {
 
     const [cake, setCake] = useState({});
 
-    console.log(cake);
-
     const { _id, title, img, price, flavor, description, ingredients } = cake;
 
     useEffect(() => {

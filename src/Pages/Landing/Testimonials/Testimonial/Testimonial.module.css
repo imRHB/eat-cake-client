@@ -9,5 +9,5 @@
     height: 32px;
 }
 .testimonialComment {
-    height: 120px;
+    min-height: 150px;
 }
