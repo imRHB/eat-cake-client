@@ -10,7 +10,7 @@ const Testimonial = (props) => {
     const { name, comment } = props.review;
 
     return (
-        <Card className={`${'mx-3 p-4 border-1 rounded-3'} ${styles.testimonialCard}`}>
+        <Card className={`${'mx-3 my-4 p-4 border-1 rounded-3'} ${styles.testimonialCard}`}>
             <div className="d-flex align-items-center">
                 <div className={`${styles.testimonialTitle}`}>
                     <Card.Title><span className="fw-bold">{userIcon}</span></Card.Title>

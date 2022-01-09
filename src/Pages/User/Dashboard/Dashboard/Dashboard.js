@@ -2,7 +2,7 @@ import React from 'react';
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 import { faHome, faPlus, faSignOutAlt, faTh, faThLarge, faThList, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import { Badge, Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import styles from './Dashboard.module.css';
 import useAuth from "../../../../hooks/useAuth";
@@ -50,7 +50,7 @@ const Dashboard = () => {
                         </Col>
 
                         <Col xs={12} sm={12} md={8} lg={9} xl={9}>
-                            <div className="px-2 py-4 bg-light">
+                            <div className="mx-1 px-2 py-4 bg-light">
                                 <Outlet />
                             </div>
                         </Col>

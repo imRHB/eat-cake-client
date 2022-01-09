@@ -41,8 +41,8 @@ function App() {
               <Route path="my-order" element={<MyOrder />} />
               <Route path="add-review" element={<AddReview />} />
               <Route path="add-product" element={<AddProduct />} />
-              <Route path="place-order/:cakeId" element={<PlaceOrder />} />
             </Route>
+            <Route path="place-order/:cakeId" element={<PlaceOrder />} />
 
             <Route path="/login" element={<Login />} />
             {/* <Route path="/register" element={<Register />} /> */}

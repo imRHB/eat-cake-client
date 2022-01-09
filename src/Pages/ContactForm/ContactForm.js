@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -9,7 +9,7 @@ const ContactForm = () => {
                 <h2 className="fw-bold text-center">Let Us Handle Your Program</h2>
 
                 <Form className={`${'mx-auto my-5 text-center'} ${styles.contactForm}`}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                         <Form.Control type="text" placeholder="Subject" />
                     </Form.Group>
 

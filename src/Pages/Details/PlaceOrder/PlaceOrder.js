@@ -84,13 +84,13 @@ const PlaceOrder = () => {
                             <p className="fs-4 fw-bold text-center text-info">User Information</p>
 
                             <form onSubmit={handleSubmit(onSubmit)} className={`${'pb-4'} ${styles.placeOrderForm}`}>
-                                <input {...register("displayName", { required: true })} value={user.displayName} readOnly />
+                                <input {...register("displayName", { required: false })} value={user.displayName} readOnly />
 
-                                <input {...register("email", { required: true })} value={user.email} readOnly />
+                                <input {...register("email", { required: false })} value={user.email} />
 
-                                <textarea {...register("shippingAddress", { required: true })} placeholder="Enter shipping address" />
+                                <textarea {...register("shippingAddress", { required: false })} placeholder="Enter shipping address" />
 
-                                <input type="number" {...register("phone", { required: true })} placeholder="Phone number" />
+                                <input type="number" {...register("phone", { required: false })} placeholder="Phone number" />
 
                                 <input type="submit" value="Place Order" className="btn btn-secondary" />
                             </form>
