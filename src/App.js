@@ -38,7 +38,9 @@ function App() {
             </PrivateRoute>} />
 
             {/* Dashboard */}
-            <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard" element={<PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>}>
               <Route path="manage-products" element={<ManageProducts />} />
               <Route path="manage-order" element={<ManageOrder />} />
               <Route path="my-order" element={<MyOrder />} />
