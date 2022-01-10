@@ -37,13 +37,13 @@ const PlaceOrder = () => {
     };
 
     return (
-        <div>
+        <div className="my-5">
             <Container>
                 <div>
-                    <h2 className="text-center fw-bold text-success py-4">Order Checkout</h2>
+                    <h2 className="text-center fw-bold text-success pb-5">Order Checkout</h2>
                 </div>
 
-                <Row xs={1} sm={1} md={1} lg={2} xl={2}>
+                <Row xs={1} sm={1} md={1} lg={2} xl={2} className="g-5">
                     <Col>
                         <div className="bg-light py-5 rounded-3 border">
                             <p className="fs-4 fw-bold text-center text-info">Product Information</p>
@@ -52,7 +52,7 @@ const PlaceOrder = () => {
                                 <div className="text-center">
                                     <img src={orderedCake.img} alt="" className="w-50 border rounded-3" />
                                 </div>
-                                <Row xs={2} sm={2} md={2} lg={2} className="my-4">
+                                <Row xs={2} sm={2} md={2} lg={2} className="my-5">
                                     <Col className="col-3 col-sm-3 col-md-3 col-lg-3">
                                         <p className="fs-5 fw-bold">Name</p>
                                         <p className="fs-5 fw-bold">Flavor</p>
@@ -81,7 +81,7 @@ const PlaceOrder = () => {
 
                     <Col>
                         <div className="bg-light py-5 rounded-3 border" style={{ position: 'sticky', top: '100px' }}>
-                            <p className="fs-4 fw-bold text-center text-info">User Information</p>
+                            <p className="fs-4 fw-bold text-center text-info">Client Information</p>
 
                             <form onSubmit={handleSubmit(onSubmit)} className={`${'pb-4'} ${styles.placeOrderForm}`}>
                                 <input {...register("displayName", { required: false })} value={user.displayName} readOnly />

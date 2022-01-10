@@ -6,42 +6,44 @@ const CakeDetails = () => {
     const { id } = useParams();
 
     const [cake, setCake] = useState({});
+    const [ingredients, SetIngredients] = useState([]);
 
-    const { _id, title, img, price, flavor, description, ingredients } = cake;
+    const { _id, title, img, price, flavor, description } = cake;
 
     useEffect(() => {
         fetch(`http://localhost:5000/cake/${id}`)
             .then(res => res.json())
-            .then(result => setCake(result));
+            .then(result => {
+                setCake(result);
+                SetIngredients(result.ingredients.split(', '));
+            });
     }, [id]);
 
     return (
         <div className="my-5">
             <Container>
-                <h2 className="text-center fs-1 fw-bold text-secondary my-5">Cake Details</h2>
+                {/* <h2 className="text-center fs-1 fw-bold text-secondary my-5">Cake Details</h2> */}
 
                 <Row xs={1} md={1} xl={2} className="g-5">
-                    <Col className="col-md-12 col-lg-6 col-xl-6">
-                        <div className="rounded-3">
+                    <Col className="col-md-12 col-lg-4 col-xl-4">
+                        <div className="rounded-3" style={{ position: 'sticky', top: '100px' }}>
                             <img className="img-fluid rounded-3" src={img} alt="" />
                         </div>
                     </Col>
 
-                    <Col className="col-md-12 col-lg-6 col-xl-6">
+                    <Col className="col-md-12 col-lg-8 col-xl-8">
                         <h1 className="fs-2 fw-bold text-info text-uppercase">{title}</h1>
-
-                        <h3 className="fs-2 fw-bold text-primary text-uppercase">${price}</h3>
-
-                        <p>Flavor: {flavor}</p>
+                        <p className="fw-bold">Flavor: {flavor}</p>
 
                         <div className="bg-light rounded-3 p-4 my-4">
                             <h4>Ingredients</h4>
-                            <p>{ingredients}</p>
-                            {/* <ul>
+                            <ul>
                                 {
-                                    ingredients.split(', ').map(igrd => <li>{igrd}</li>)
+                                    ingredients.map(ingredient => <li
+                                        key={ingredient}
+                                    >{ingredient}</li>)
                                 }
-                            </ul> */}
+                            </ul>
                         </div>
 
                         <div className="bg-light rounded-3 p-4 my-4">
@@ -49,11 +51,11 @@ const CakeDetails = () => {
                             <p>{description}</p>
                         </div>
 
-                        <div>
-
+                        <div className="d-flex align-center justify-content-between">
+                            <h3 className="fw-bold">${price}</h3>
                             <Link to={`/place-order/${_id}`}>
                                 <Button
-                                    variant="success"
+                                    variant="secondary"
                                 >
                                     Order Now
                                 </Button>
