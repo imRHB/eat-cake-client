@@ -17,13 +17,20 @@ const MyOrder = () => {
     }, [orders, user.email]);
 
     const handleDeleteOrder = cakeId => {
-        fetch(`http://localhost:5000/orders/${cakeId}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
+        const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
+        if (deleteConfirmation) {
+            fetch(`http://localhost:5000/orders/${cakeId}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+
+                })
+        }
+        else {
+            return;
+        }
     };
 
     return (

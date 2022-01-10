@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
+import { toast } from "react-toastify";
 import styles from './AddProduct.module.css';
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch(``, {
+        fetch(`http://localhost:5000/cake`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -16,8 +17,15 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
 
             });
+
+        toast.success(`New Cake added successfully`, {
+            position: "bottom-left",
+            autoClose: 2000,
+        });
+        reset();
     };
 
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -10,11 +11,30 @@ const ManageProducts = () => {
         fetch('http://localhost:5000/cake')
             .then(res => res.json())
             .then(data => setProducts(data));
-    }, []);
+    }, [products]);
 
-    const handleDeleteProduct = () => {
-        console.log('deleted');
-    }
+    const handleDeleteProduct = (cakeId) => {
+        const deleteConfirmation = window.confirm('Do you want to delete the product?');
+
+        if (deleteConfirmation) {
+            fetch(`http://localhost:5000/cake/${cakeId}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(result => {
+
+                });
+
+            toast.success(`Product deleted successfully`, {
+                position: "bottom-left",
+                autoClose: 2000,
+            });
+        }
+        else {
+            return;
+        }
+
+    };
 
     return (
         <div>
@@ -48,6 +68,8 @@ const ManageProducts = () => {
                         }
                     </tbody>
                 </Table>
+
+                <ToastContainer />
             </Container>
         </div>
     );

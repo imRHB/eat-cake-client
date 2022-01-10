@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Container, Table } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
 
 const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
 
@@ -29,13 +30,25 @@ const ManageOrder = () => {
     };
 
     const handleDeleteOrder = cakeId => {
-        fetch(`http://localhost:5000/orders/${cakeId}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
+        const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
+        if (deleteConfirmation) {
+            fetch(`http://localhost:5000/orders/${cakeId}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+
+                });
+
+            toast.success(`Order deleted successfully`, {
+                position: 'bottom-left',
+                autoClose: 2000
+            });
+        }
+        else {
+            return;
+        }
     };
 
     return (
@@ -74,6 +87,8 @@ const ManageOrder = () => {
                         }
                     </tbody>
                 </Table>
+
+                <ToastContainer />
             </Container>
         </div>
     );

@@ -1,7 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-// import "~slick-carousel/slick/slick.css";
-// import "~slick-carousel/slick/slick-theme.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import Home from "./Pages/Landing/Home/Home";
@@ -20,13 +18,10 @@ import MyOrder from "./Pages/User/Dashboard/MyOrder/MyOrder";
 import AddReview from "./Pages/User/Dashboard/AddReview/AddReview";
 import AddProduct from "./Pages/User/Dashboard/AddProduct/AddProduct";
 import PlaceOrder from "./Pages/Details/PlaceOrder/PlaceOrder";
-import ChocolateFlavor from "./Pages/Landing/Featured/Flavors/ChocolateFlavor/ChocolateFlavor";
-import StrawberryFlavor from "./Pages/Landing/Featured/Flavors/StrawberryFlavor/StrawberryFlavor";
-import BlackForestFlavor from "./Pages/Landing/Featured/Flavors/BlackForestFlavor/BlackForestFlavor";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <AuthProvider>
         <BrowserRouter>
           <Navigation />
@@ -34,9 +29,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="cake" element={<Cakes />} />
-            <Route exact path="flavor/chocolate" element={<ChocolateFlavor />} />
-            <Route exact path="flavor/strawberry" element={<StrawberryFlavor />} />
-            <Route exact path="flavor/black-forest" element={<BlackForestFlavor />} />
             <Route path="cake/:id" element={<CakeDetails />} />
             <Route path="contact" element={<ContactForm />} />
 

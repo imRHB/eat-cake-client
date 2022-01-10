@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
 import ReactStars from "react-rating-stars-component";
+import { toast } from "react-toastify";
 import useAuth from "../../../../hooks/useAuth";
 import styles from './AddReview.module.css';
 
@@ -32,6 +33,11 @@ const AddReview = () => {
             .then(result => {
 
             });
+
+        toast.success(`Review added successfully`, {
+            position: 'bottom-left',
+            autoClose: 2000,
+        });
         reset();
     };
 

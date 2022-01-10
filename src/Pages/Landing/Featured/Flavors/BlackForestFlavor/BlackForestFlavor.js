@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -44,25 +44,39 @@ const settings = {
 
 const BlackForestFlavor = () => {
     const [bfCakes, setBfCakes] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
+
         fetch(`http://localhost:5000/flavor/Black-Forest`)
             .then(res => res.json())
-            .then(data => setBfCakes(data));
+            .then(data => {
+                setBfCakes(data);
+                setLoading(false);
+            });
     }, []);
 
     return (
         <div>
-            <Container>
-                <Slider {...settings}>
-                    {
-                        bfCakes.map(cake => <FlavorCakeCard
-                            key={cake._id}
-                            cake={cake}
-                        ></FlavorCakeCard>)
-                    }
-                </Slider>
-            </Container>
+            {
+                loading ? <Container style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Spinner animation="grow" variant="secondary" size="sm" className="mx-1" />
+                    <Spinner animation="grow" variant="primary" size="sm" className="mx-1" />
+                    <Spinner animation="grow" variant="warning" size="sm" className="mx-1" />
+                </Container>
+                    :
+                    <Container>
+                        <Slider {...settings}>
+                            {
+                                bfCakes.map(cake => <FlavorCakeCard
+                                    key={cake._id}
+                                    cake={cake}
+                                ></FlavorCakeCard>)
+                            }
+                        </Slider>
+                    </Container>
+            }
         </div>
     );
 };

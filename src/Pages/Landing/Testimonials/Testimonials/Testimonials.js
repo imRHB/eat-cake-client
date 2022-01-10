@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import Testimonial from "../Testimonial/Testimonial";
 
 const settings = {
