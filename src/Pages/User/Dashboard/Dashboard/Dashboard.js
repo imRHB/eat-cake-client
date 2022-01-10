@@ -1,6 +1,6 @@
 import React from 'react';
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
-import { faHome, faPlus, faSignOutAlt, faTh, faThLarge, faThList } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPlus, faSignOutAlt, faTh, faThLarge, faThList, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
@@ -12,6 +12,7 @@ const dashboardIcon = <FontAwesomeIcon icon={faTh} />;
 const reviewIcon = <FontAwesomeIcon icon={faCommentAlt} />;
 const listIcon = <FontAwesomeIcon icon={faThList} />;
 const plusIcon = <FontAwesomeIcon icon={faPlus} />;
+const userPlusIcon = <FontAwesomeIcon icon={faUserPlus} />;
 const serviceIcon = <FontAwesomeIcon icon={faThLarge} />;
 const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
@@ -43,6 +44,8 @@ const Dashboard = () => {
                                     <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
 
                                     <Link to="add-product"><span className="me-3">{plusIcon}</span>Add Product</Link>
+
+                                    <Link to="make-admin"><span className="me-3">{userPlusIcon}</span>Make Admin</Link>
 
                                     <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
 
