@@ -5,10 +5,8 @@ import './App.css';
 import Home from "./Pages/Landing/Home/Home";
 import Cakes from "./Pages/Cakes/Cakes/Cakes";
 import CakeDetails from "./Pages/Details/CakeDetails/CakeDetails";
-import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Login from "./Pages/User/Login/Login";
 import NotFound from "./Pages/Shared/Error/NotFound/NotFound";
-import Footer from "./Pages/Shared/Footer/Footer";
 import ContactForm from "./Pages/ContactForm/ContactForm";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import Dashboard from "./Pages/User/Dashboard/Dashboard/Dashboard";
@@ -19,6 +17,9 @@ import AddReview from "./Pages/User/Dashboard/AddReview/AddReview";
 import AddProduct from "./Pages/User/Dashboard/AddProduct/AddProduct";
 import PlaceOrder from "./Pages/Details/PlaceOrder/PlaceOrder";
 import MakeAdmin from "./Pages/User/Dashboard/MakeAdmin/MakeAdmin";
+import PrivateRoute from "./Pages/Routes/PrivateRoute/PrivateRoute";
+import Footer from "./Pages/Shared/Footer/Footer";
+import Navigation from "./Pages/Shared/Navigation/Navigation";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             <Route path="cake" element={<Cakes />} />
             <Route path="cake/:id" element={<CakeDetails />} />
             <Route path="contact" element={<ContactForm />} />
+            <Route path="place-order/:cakeId" element={<PrivateRoute>
+              <PlaceOrder />
+            </PrivateRoute>} />
 
             {/* Dashboard */}
             <Route path="/dashboard" element={<Dashboard />}>
@@ -42,7 +46,6 @@ function App() {
               <Route path="add-review" element={<AddReview />} />
               <Route path="add-product" element={<AddProduct />} />
             </Route>
-            <Route path="place-order/:cakeId" element={<PlaceOrder />} />
 
             <Route path="/login" element={<Login />} />
             {/* <Route path="/register" element={<Register />} /> */}

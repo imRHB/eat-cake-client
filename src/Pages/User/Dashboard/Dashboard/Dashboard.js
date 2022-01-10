@@ -17,38 +17,38 @@ const serviceIcon = <FontAwesomeIcon icon={faThLarge} />;
 const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
 const Dashboard = () => {
-    const { logout } = useAuth();
+    const { user, admin, logout } = useAuth();
 
     return (
-        <div className="">
-            {/* <Container>
-                <h3 className="text-center fw-bold">Dashboard</h3>
-            </Container> */}
-
+        <div>
             <Container fluid className="p-5">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="my-order">
                     <Row xs={1} sm={1} md={2} lg={2} xl={2} className="g-0">
                         <Col xs={12} sm={12} md={4} lg={3} xl={3}>
                             <div className="bg-dark py-4 border-0" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
                                 <Nav variant="dark" className={`${'flex-column'} ${styles.dashNav}`}>
-                                    <Link to="/home"><span className="me-3">{homeIcon}</span>Home</Link>
+                                    <>
+                                        <Link to="/home"><span className="me-3">{homeIcon}</span>Home</Link>
 
-                                    <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
+                                        {
+                                            user && !admin && <>
+                                                <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
+                                                <Link to="my-order"><span className="me-3">{listIcon}</span>My Order</Link>
+                                                <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
+                                            </>
+                                        }
 
-                                    <Link to="manage-products"><span className="me-3">{serviceIcon}</span>Manage Products</Link>
+                                        {
+                                            admin && <>
+                                                <Link to="manage-products"><span className="me-3">{serviceIcon}</span>Manage Products</Link>
+                                                <Link to="manage-order"><span className="me-3">{serviceIcon}</span>Manage Order</Link>
+                                                <Link to="add-product"><span className="me-3">{plusIcon}</span>Add Product</Link>
+                                                <Link to="make-admin"><span className="me-3">{userPlusIcon}</span>Make Admin</Link>
+                                            </>
+                                        }
 
-                                    <Link to="manage-order"><span className="me-3">{serviceIcon}</span>Manage Order</Link>
-
-                                    <Link to="my-order"><span className="me-3">{listIcon}</span>My Order</Link>
-
-                                    <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
-
-                                    <Link to="add-product"><span className="me-3">{plusIcon}</span>Add Product</Link>
-
-                                    <Link to="make-admin"><span className="me-3">{userPlusIcon}</span>Make Admin</Link>
-
-                                    <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
-
+                                        <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
+                                    </>
                                 </Nav>
                             </div>
                         </Col>

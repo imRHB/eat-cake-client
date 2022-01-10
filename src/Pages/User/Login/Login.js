@@ -24,11 +24,15 @@ const Login = () => {
                 <div className={`${styles.loginForm}`}>
                     {
                         user?.email ? <>
-                            <div>
-                                <img src={user.photoURL} alt="" style={{ width: '72px' }} />
+                            <div className="my-3">
+                                <div>
+                                    <img src={user.photoURL} alt="" style={{ width: '72px', borderRadius: '4px' }} />
+                                </div>
 
-                                <h3>{user.displayName}</h3>
-                                <p><small>{user.email}</small></p>
+                                <div className="my-3">
+                                    <h3>{user.displayName}</h3>
+                                    <p><small>{user.email}</small></p>
+                                </div>
                             </div>
 
                             <div>
