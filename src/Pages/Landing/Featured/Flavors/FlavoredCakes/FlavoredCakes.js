@@ -9,9 +9,9 @@ const FlavoredCakes = () => {
     const [key, setKey] = useState('chocolate');
 
     return (
-        <div className="my-5 pb-5">
+        <div className="bg-light py-5">
             <Container>
-                <h2 className="text-center my-5 fw-bold">Available Flavors</h2>
+                <h2 className="text-center fw-bold text-uppercase my-5">Choose from Category</h2>
                 <Tabs
                     id="controlled-tab-example"
                     activeKey={key}

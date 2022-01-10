@@ -1,0 +1,7 @@
+.cakeCard {
+    transition: 0.5s;
+}
+.cakeCard:hover {
+    /* border-style: hidden; */
+    box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.08);
+}

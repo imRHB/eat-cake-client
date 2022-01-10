@@ -19,7 +19,7 @@ const FeaturedCakes = () => {
     }, []);
 
     return (
-        <div className="bg-light py-5">
+        <div className="py-5">
             <Container>
                 <h2 className="text-center my-5 fw-bold">Top Selling</h2>
 

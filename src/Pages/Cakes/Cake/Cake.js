@@ -9,6 +9,7 @@ const eyeIcon = <FontAwesomeIcon icon={faEye} />;
 
 const Cake = (props) => {
     const { _id, title, img, price } = props.cake;
+
     return (
         <Col>
             <Card className={`${'h-100 text-center border-0 bg-light'} ${styles.cakeCard}`}>
