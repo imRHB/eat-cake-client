@@ -22,9 +22,8 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 const user = result?.user;
-                console.log(user);
                 const destination = location?.state?.from || '/';
-                saveUser(user?.email, user?.displayName, 'POST');
+                saveUser(user?.email, user?.displayName, 'PUT');
                 setError('');
                 navigate(destination);
             })
@@ -37,7 +36,7 @@ const useFirebase = () => {
     // Save user to database
     const saveUser = (email, displayName, method) => {
         const user = { email, name: displayName };
-        user.role = 'user';
+
         console.log(user);
 
         fetch('http://localhost:5000/users', {
