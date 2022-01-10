@@ -11,6 +11,8 @@ const useFirebase = () => {
     const [admin, setAdmin] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    console.log(admin);
+
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
@@ -53,6 +55,8 @@ const useFirebase = () => {
 
     // On auth state changed
     useEffect(() => {
+        setLoading(true);
+
         const unsubscribed = onAuthStateChanged(auth, user => {
             if ((user)) {
                 setUser(user);

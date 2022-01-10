@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -45,38 +45,43 @@ const settings = {
 
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
+
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data));
+            .then(data => {
+                setReviews(data);
+                setLoading(false);
+            });
     }, []);
 
     return (
         <div className="my-5 py-5 bg-light">
             <Container className="pt-5">
                 <h2 className="text-center fs-1 fw-bold text-secondary mb-5">Testimonials</h2>
-
-                {/* <Row xs={1} sm={1} md={2} lg={3} xl={3} className="g-5">
-                    {
-                        reviews.map(review => <Testimonial
-                            key={review._id}
-                            review={review}
-                        ></Testimonial>)
-                    }
-                </Row> */}
             </Container>
 
-            <Container className="mb-5 pb-5">
-                <Slider {...settings}>
-                    {
-                        reviews.map(review => <Testimonial
-                            key={review._id}
-                            review={review}
-                        ></Testimonial>)
-                    }
-                </Slider>
-            </Container>
+            {
+                loading ? <Container style={{ minHeight: '30vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Spinner animation="grow" variant="secondary" size="sm" className="mx-1" />
+                    <Spinner animation="grow" variant="primary" size="sm" className="mx-1" />
+                    <Spinner animation="grow" variant="warning" size="sm" className="mx-1" />
+                </Container>
+                    :
+                    <Container className="mb-5 pb-5">
+                        <Slider {...settings}>
+                            {
+                                reviews.map(review => <Testimonial
+                                    key={review._id}
+                                    review={review}
+                                ></Testimonial>)
+                            }
+                        </Slider>
+                    </Container>
+            }
         </div>
     );
 };

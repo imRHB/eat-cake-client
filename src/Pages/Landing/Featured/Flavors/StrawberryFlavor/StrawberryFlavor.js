@@ -61,7 +61,7 @@ const StrawberryFlavor = () => {
     return (
         <div>
             {
-                loading ? <Container style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                loading ? <Container style={{ minHeight: '40vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Spinner animation="grow" variant="secondary" size="sm" className="mx-1" />
                     <Spinner animation="grow" variant="primary" size="sm" className="mx-1" />
                     <Spinner animation="grow" variant="warning" size="sm" className="mx-1" />

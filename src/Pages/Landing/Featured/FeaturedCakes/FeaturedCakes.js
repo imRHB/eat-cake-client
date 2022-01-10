@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Cake from "../../../Cakes/Cake/Cake";
 
@@ -11,11 +11,17 @@ const angleDblRight = <FontAwesomeIcon icon={faAngleDoubleRight} />;
 
 const FeaturedCakes = () => {
     const [cakes, setCakes] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
+
         fetch('http://localhost:5000/cake')
             .then(res => res.json())
-            .then(data => setCakes(data.slice(0, 6)));
+            .then(data => {
+                setCakes(data.slice(0, 6));
+                setLoading(false);
+            });
     }, []);
 
     return (
@@ -23,14 +29,22 @@ const FeaturedCakes = () => {
             <Container>
                 <h2 className="text-center my-5 fw-bold">Top Selling</h2>
 
-                <Row xs={1} sm={1} md={2} lg={3} xl={3} className="g-5">
-                    {
-                        cakes.map(cake => <Cake
-                            key={cake._id}
-                            cake={cake}
-                        ></Cake>)
-                    }
-                </Row>
+                {
+                    loading ? <Container style={{ minHeight: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Spinner animation="grow" variant="secondary" size="sm" className="mx-1" />
+                        <Spinner animation="grow" variant="primary" size="sm" className="mx-1" />
+                        <Spinner animation="grow" variant="warning" size="sm" className="mx-1" />
+                    </Container>
+                        :
+                        <Row xs={1} sm={1} md={2} lg={3} xl={3} className="g-5">
+                            {
+                                cakes.map(cake => <Cake
+                                    key={cake._id}
+                                    cake={cake}
+                                ></Cake>)
+                            }
+                        </Row>
+                }
 
                 <Container className="my-5 text-center">
                     <Link to="/cake">

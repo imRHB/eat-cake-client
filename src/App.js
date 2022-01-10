@@ -20,6 +20,7 @@ import MakeAdmin from "./Pages/User/Dashboard/MakeAdmin/MakeAdmin";
 import PrivateRoute from "./Pages/Routes/PrivateRoute/PrivateRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
+import AdminRoute from "./Pages/Routes/AdminRoute/AdminRoute";
 
 function App() {
   return (
@@ -41,12 +42,12 @@ function App() {
             <Route path="/dashboard" element={<PrivateRoute>
               <Dashboard />
             </PrivateRoute>}>
+              <Route path="my-order" element={<MyOrder />} />
+              <Route path="add-review" element={<AddReview />} />
               <Route path="manage-products" element={<ManageProducts />} />
               <Route path="manage-order" element={<ManageOrder />} />
-              <Route path="my-order" element={<MyOrder />} />
-              <Route path="make-admin" element={<MakeAdmin />} />
-              <Route path="add-review" element={<AddReview />} />
               <Route path="add-product" element={<AddProduct />} />
+              <Route path="make-admin" element={<MakeAdmin />} />
             </Route>
 
             <Route path="/login" element={<Login />} />

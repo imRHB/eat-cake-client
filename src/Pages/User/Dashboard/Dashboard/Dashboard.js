@@ -31,7 +31,7 @@ const Dashboard = () => {
                                         <Link to="/home"><span className="me-3">{homeIcon}</span>Home</Link>
 
                                         {
-                                            user && !admin && <>
+                                            user.email && !admin.admin && <>
                                                 <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
                                                 <Link to="my-order"><span className="me-3">{listIcon}</span>My Order</Link>
                                                 <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
@@ -39,7 +39,7 @@ const Dashboard = () => {
                                         }
 
                                         {
-                                            admin && <>
+                                            admin.admin && <>
                                                 <Link to="manage-products"><span className="me-3">{serviceIcon}</span>Manage Products</Link>
                                                 <Link to="manage-order"><span className="me-3">{serviceIcon}</span>Manage Order</Link>
                                                 <Link to="add-product"><span className="me-3">{plusIcon}</span>Add Product</Link>
