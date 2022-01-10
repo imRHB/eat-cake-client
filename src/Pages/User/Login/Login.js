@@ -9,7 +9,7 @@ import styles from './Login.module.css';
 const googleIcon = <FontAwesomeIcon icon={faGoogle} />;
 
 const Login = () => {
-    const { loginWithGoogle } = useAuth();
+    const { user, loginWithGoogle, logout } = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -22,14 +22,35 @@ const Login = () => {
         <div className="my-5 text-center">
             <Container>
                 <div className={`${styles.loginForm}`}>
-                    <Button
-                        variant="secondary"
-                        onClick={handleGoogleSignIn}
-                        className="my-3"
-                    ><span
-                        className="me-4"
-                    >{googleIcon}
-                        </span> Continue with Google</Button>
+                    {
+                        user?.email ? <>
+                            <div>
+                                <img src={user.photoURL} alt="" style={{ width: '72px' }} />
+
+                                <h3>{user.displayName}</h3>
+                                <p><small>{user.email}</small></p>
+                            </div>
+
+                            <div>
+                                <Button
+                                    variant="dark"
+                                    onClick={logout}
+                                >
+                                    Logout
+                                </Button>
+                            </div>
+                        </>
+                            :
+                            <Button
+                                variant="secondary"
+                                onClick={handleGoogleSignIn}
+                                className="my-3"
+                            ><span
+                                className="me-4"
+                            >{googleIcon}</span>
+                                Sign In with Google
+                            </Button>
+                    }
 
                     {/* <p>Don't have an account? <Link
                         to="/register"
