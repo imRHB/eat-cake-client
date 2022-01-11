@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { useEffect } from "react";
 import { useState } from "react";
 import initializeFirebase from "../Firebase/firebase.init";
@@ -14,6 +14,47 @@ const useFirebase = () => {
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
+
+    // Register with email and password
+    const registerWithEmailAndPassword = (email, password, name, navigate) => {
+        setLoading(true);
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                saveUser(email, name, 'POST');
+
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
+                    .then(() => {
+
+                    })
+                    .catch(error => {
+
+                    })
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
+    };
+
+    // Login with email and password
+    const loginWithWmailAndPassword = (email, password, location, navigate) => {
+        setLoading(true);
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const destination = location?.state?.from || '/';
+                navigate(destination);
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+            .finally(() => setLoading(false));
+    };
 
     // Signin with Google
     const loginWithGoogle = (location, navigate) => {
@@ -92,6 +133,8 @@ const useFirebase = () => {
         admin,
         error,
         loading,
+        registerWithEmailAndPassword,
+        loginWithWmailAndPassword,
         loginWithGoogle,
         logout
     }
