@@ -50,7 +50,7 @@ const StrawberryFlavor = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`http://localhost:5000/flavor/Strawberry`)
+        fetch(`https://agile-tor-11686.herokuapp.com/flavor/Strawberry`)
             .then(res => res.json())
             .then(data => {
                 setStrawCakes(data);

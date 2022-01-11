@@ -14,3 +14,6 @@
     margin-right: 16px;
     padding: 0;
 }
+.navLink:hover {
+    color: #4CAF50;
+}

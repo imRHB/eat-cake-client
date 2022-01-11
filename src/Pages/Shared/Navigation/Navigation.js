@@ -39,7 +39,13 @@ const Navigation = () => {
                             user?.email ? <div className={`${'d-lg-flex align-items-center justify-content-center my-2 my-lg-0'} ${styles.navbarNav}`}>
 
                                 <Link to="dashboard">Dashboard</Link>
-                                <h5 className="mx-0 mx-lg-3 mb-3 my-lg-auto text-success fw-bold m-0"><span className="fs-4 ms-2">{userIcon}</span> {user.displayName}</h5>
+                                <h5 className="mx-0 mx-lg-3 mb-3 my-lg-auto text-success fw-bold m-0">
+                                    {
+                                        user.photoURL ? <img src={user.photoURL} alt="" className="mx-2" style={{ width: '42px', borderRadius: '50%', padding: '2px', border: '1px solid gray' }} />
+                                            :
+                                            <span className="fs-4 mx-2">{userIcon}</span>
+                                    }
+                                    {user.displayName}</h5>
                                 <Button
                                     variant="dark"
                                     className="ms-2"
@@ -53,7 +59,6 @@ const Navigation = () => {
                                         variant="secondary"
                                         className="ms-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span>
                                     </Button>
-
                                 </div>
                         }
                     </Nav>

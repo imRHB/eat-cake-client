@@ -2,6 +2,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
 import useAuth from "../../../../hooks/useAuth";
 
 const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
@@ -11,7 +12,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://agile-tor-11686.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders, user.email]);
@@ -20,13 +21,18 @@ const MyOrder = () => {
         const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
         if (deleteConfirmation) {
-            fetch(`http://localhost:5000/orders/${cakeId}`, {
+            fetch(`https://agile-tor-11686.herokuapp.com/orders/${cakeId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
 
-                })
+                });
+
+            toast.success(`Order deleted successfully`, {
+                position: 'bottom-left',
+                autoClose: 2000
+            });
         }
         else {
             return;
@@ -35,6 +41,8 @@ const MyOrder = () => {
 
     return (
         <div>
+            <ToastContainer />
+
             <Container>
                 <div className="mb-4">
                     <h3 className="fw-bold">My Order</h3>

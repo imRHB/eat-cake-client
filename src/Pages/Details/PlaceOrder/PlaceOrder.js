@@ -21,7 +21,7 @@ const PlaceOrder = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`http://localhost:5000/cake/${cakeId}`)
+        fetch(`https://agile-tor-11686.herokuapp.com/cake/${cakeId}`)
             .then(res => res.json())
             .then(data => {
                 setOrderedCake(data);
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
         data.name = user?.displayName;
         data.email = user?.email;
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://agile-tor-11686.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const PlaceOrder = () => {
 
             });
 
-        toast.success(`Your order is successfull`, {
+        toast.success(`Order placed successfully`, {
             position: 'bottom-left',
             autoClose: 2000
         });
@@ -55,6 +55,8 @@ const PlaceOrder = () => {
 
     return (
         <div className="my-5">
+            <ToastContainer />
+
             {
                 loading ? <Container style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Spinner animation="border" variant="info" />
@@ -115,8 +117,6 @@ const PlaceOrder = () => {
                                 </div>
                             </Col>
                         </Row>
-
-                        <ToastContainer />
                     </Container>
             }
         </div>

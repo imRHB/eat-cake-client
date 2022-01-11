@@ -14,7 +14,7 @@ const CakeDetails = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`http://localhost:5000/cake/${id}`)
+        fetch(`https://agile-tor-11686.herokuapp.com/cake/${id}`)
             .then(res => res.json())
             .then(result => {
                 setCake(result);

@@ -11,8 +11,6 @@ const useFirebase = () => {
     const [admin, setAdmin] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    console.log(admin);
-
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
@@ -39,9 +37,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         const user = { email, name: displayName };
 
-        console.log(user);
-
-        fetch('http://localhost:5000/users', {
+        fetch('https://agile-tor-11686.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -86,7 +82,7 @@ const useFirebase = () => {
 
     // Admin status
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://agile-tor-11686.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data));
     }, [user?.email]);

@@ -49,7 +49,7 @@ const BlackForestFlavor = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`http://localhost:5000/flavor/Black-Forest`)
+        fetch(`https://agile-tor-11686.herokuapp.com/flavor/Black-Forest`)
             .then(res => res.json())
             .then(data => {
                 setBfCakes(data);

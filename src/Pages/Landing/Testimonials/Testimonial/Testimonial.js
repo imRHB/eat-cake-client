@@ -8,13 +8,17 @@ import styles from './Testimonial.module.css';
 const userIcon = <FontAwesomeIcon icon={faUser} />;
 
 const Testimonial = (props) => {
-    const { name, comment, rating } = props.review;
+    const { name, img, comment, rating } = props.review;
 
     return (
         <Card className={`${'mx-3 my-4 p-4 border-1 rounded-3'} ${styles.testimonialCard}`}>
             <div className="d-flex align-items-center">
                 <div className={`${styles.testimonialTitle}`}>
-                    <Card.Title><span className="fw-bold">{userIcon}</span></Card.Title>
+                    {
+                        img ? <img src={img} alt="" style={{ width: '26px', borderRadius: '50%' }} />
+                            :
+                            <Card.Title><span className="fw-bold">{userIcon}</span></Card.Title>
+                    }
                 </div>
 
                 <div className="ms-3">

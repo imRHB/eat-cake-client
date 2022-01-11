@@ -61,19 +61,19 @@ const Footer = () => {
 
                             <Nav className="my-3">
                                 <Nav.Item>
-                                    <Nav.Link href="https://www.facebook.com/" target="_blank">{facebook}</Nav.Link>
+                                    <Nav.Link href="https://www.facebook.com/" className={`${styles.navLink}`} target="_blank">{facebook}</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link href="https://www.instagram.com/" target="_blank">{instagram}</Nav.Link>
+                                    <Nav.Link href="https://www.instagram.com/" className={`${styles.navLink}`} target="_blank">{instagram}</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link href="https://twitter.com/" target="_blank">{twitter}</Nav.Link>
+                                    <Nav.Link href="https://twitter.com/" className={`${styles.navLink}`} target="_blank">{twitter}</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link href="https://www.youtube.com/" target="_blank">{youtube}</Nav.Link>
+                                    <Nav.Link href="https://www.youtube.com/" className={`${styles.navLink}`} target="_blank">{youtube}</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link href="https://www.linkedin.com/" target="_blank">{linkedin}</Nav.Link>
+                                    <Nav.Link href="https://www.linkedin.com/" className={`${styles.navLink}`} target="_blank">{linkedin}</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </div>

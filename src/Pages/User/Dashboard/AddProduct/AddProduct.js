@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import styles from './AddProduct.module.css';
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/cake`, {
+        fetch(`https://agile-tor-11686.herokuapp.com/cake`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -17,7 +17,6 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
 
             });
 
@@ -30,6 +29,8 @@ const AddProduct = () => {
 
     return (
         <div>
+            <ToastContainer />
+
             <Container>
                 <div className="mb-4">
                     <h3 className="fw-bold">Add Cake</h3>

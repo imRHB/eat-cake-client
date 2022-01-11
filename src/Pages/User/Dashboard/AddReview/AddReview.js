@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { useForm } from 'react-hook-form';
 import ReactStars from "react-rating-stars-component";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import useAuth from "../../../../hooks/useAuth";
 import styles from './AddReview.module.css';
 
@@ -20,9 +20,10 @@ const AddReview = () => {
     const onSubmit = data => {
         data.name = user?.displayName;
         data.email = user?.email;
+        data.img = user?.photoURL;
         data.rating = rating;
 
-        fetch(`http://localhost:5000/add-review`, {
+        fetch(`https://agile-tor-11686.herokuapp.com/add-review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,6 +44,8 @@ const AddReview = () => {
 
     return (
         <div>
+            <ToastContainer />
+
             <Container>
                 <div className="mb-4">
                     <h3 className="fw-bold">Give Us Review</h3>

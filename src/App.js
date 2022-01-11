@@ -20,7 +20,6 @@ import MakeAdmin from "./Pages/User/Dashboard/MakeAdmin/MakeAdmin";
 import PrivateRoute from "./Pages/Routes/PrivateRoute/PrivateRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
-import AdminRoute from "./Pages/Routes/AdminRoute/AdminRoute";
 
 function App() {
   return (
@@ -51,7 +50,6 @@ function App() {
             </Route>
 
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/register" element={<Register />} /> */}
 
             <Route path="*" element={<NotFound />} />
           </Routes>

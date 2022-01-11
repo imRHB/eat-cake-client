@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
-// import styles from './MakeAdmin.module.css';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState({});
@@ -16,7 +15,7 @@ const MakeAdmin = () => {
 
         const user = { email };
 
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://agile-tor-11686.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -25,14 +24,23 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(result => {
-                if (result.modifiedCount > 0) {
+                if (result.modifiedCount) {
                     toast.success(`Admin added successfully`, {
                         position: 'bottom-left',
                         autoClose: 2000
                     })
                 }
+                else if (result.matchedCount) {
+                    toast.warning(`User already has admin access`, {
+                        position: 'bottom-left',
+                        autoClose: 2000
+                    })
+                }
                 else {
-
+                    toast.error(`No user exists in database`, {
+                        position: 'bottom-left',
+                        autoClose: 2000
+                    })
                 }
             });
 
@@ -41,6 +49,8 @@ const MakeAdmin = () => {
 
     return (
         <div>
+            <ToastContainer />
+
             <Container>
                 <div className="mb-4">
                     <h3 className="fw-bold">Add New Admin</h3>
@@ -51,7 +61,7 @@ const MakeAdmin = () => {
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control
                             onBlur={handleOnBlur}
-                            style={{ maxWidth: '570px', margin: 'auto 0' }}
+                            style={{ maxWidth: '480px', margin: 'auto 0' }}
                             type="email"
                             placeholder="Enter Email" />
                     </Form.Group>
@@ -63,8 +73,6 @@ const MakeAdmin = () => {
                         Add Admin
                     </Button>
                 </Form>
-
-                <ToastContainer />
             </Container>
         </div>
     );

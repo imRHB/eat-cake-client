@@ -45,23 +45,22 @@ const Login = () => {
                             </div>
                         </>
                             :
-                            <Button
-                                variant="secondary"
-                                onClick={handleGoogleSignIn}
-                                className="my-3"
-                            ><span
-                                className="me-4"
-                            >{googleIcon}</span>
-                                Sign In with Google
-                            </Button>
-                    }
+                            <>
+                                <div>
+                                    <h2 className="fw-bold mb-5">EAT CAKE</h2>
+                                </div>
 
-                    {/* <p>Don't have an account? <Link
-                        to="/register"
-                        className="user-toggle">
-                        Create an account
-                    </Link>
-                    </p> */}
+                                <Button
+                                    variant="secondary"
+                                    onClick={handleGoogleSignIn}
+                                    className="my-3"
+                                ><span
+                                    className="me-4"
+                                >{googleIcon}</span>
+                                    Sign In with Google
+                                </Button>
+                            </>
+                    }
                 </div>
             </Container>
         </div>

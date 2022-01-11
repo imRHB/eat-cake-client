@@ -1,14 +1,18 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 
+const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
+
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cake')
+        fetch('https://agile-tor-11686.herokuapp.com/cake')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, [products]);
@@ -17,7 +21,7 @@ const ManageProducts = () => {
         const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
         if (deleteConfirmation) {
-            fetch(`http://localhost:5000/cake/${cakeId}`, {
+            fetch(`https://agile-tor-11686.herokuapp.com/cake/${cakeId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -33,11 +37,12 @@ const ManageProducts = () => {
         else {
             return;
         }
-
     };
 
     return (
         <div>
+            <ToastContainer />
+
             <Container>
                 <div className="mb-4">
                     <h3 className="fw-bold">Manage Products</h3>
@@ -63,13 +68,13 @@ const ManageProducts = () => {
                                 <td>{product.title}</td>
                                 <td>${product.price}</td>
                                 <td>In Stock</td>
-                                <td><Button onClick={() => handleDeleteProduct(product._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td>
+                                    <Button onClick={() => handleDeleteProduct(product._id)} variant="none" size="" className="border-danger border-2"><span className="text-danger">{deleteIcon}</span></Button>
+                                </td>
                             </tr>)
                         }
                     </tbody>
                 </Table>
-
-                <ToastContainer />
             </Container>
         </div>
     );

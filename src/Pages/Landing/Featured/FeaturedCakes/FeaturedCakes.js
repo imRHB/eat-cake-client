@@ -16,7 +16,7 @@ const FeaturedCakes = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch('http://localhost:5000/cake')
+        fetch('https://agile-tor-11686.herokuapp.com/cake')
             .then(res => res.json())
             .then(data => {
                 setCakes(data.slice(0, 6));

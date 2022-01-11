@@ -9,7 +9,7 @@ const Cakes = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch('http://localhost:5000/cake')
+        fetch('https://agile-tor-11686.herokuapp.com/cake')
             .then(res => res.json())
             .then(result => {
                 setCakes(result);
