@@ -56,7 +56,7 @@ const Navigation = () => {
                                 :
                                 <div className="">
                                     <Button
-                                        variant="secondary"
+                                        variant="primary"
                                         className="ms-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span>
                                     </Button>
                                 </div>

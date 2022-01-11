@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from 'react';
 import { Button, Container, Form, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import useAuth from "../../../hooks/useAuth";
 import styles from './Login.module.css';
 
@@ -10,7 +11,6 @@ const googleIcon = <FontAwesomeIcon icon={faGoogle} />;
 
 const Login = () => {
     const [userData, setUserData] = useState({});
-    // const [loading, setLoading] = useState(false);
 
     const { user, loginWithWmailAndPassword, loginWithGoogle, logout, loading } = useAuth();
 
@@ -25,7 +25,6 @@ const Login = () => {
         const newUserData = { ...userData };
         newUserData[field] = value;
         setUserData(newUserData);
-        console.log(field, value);
     };
 
     const handleLogin = e => {
@@ -126,6 +125,8 @@ const Login = () => {
                         </div>
                     </Container>
             }
+
+            <ToastContainer />
         </div>
     );
 };

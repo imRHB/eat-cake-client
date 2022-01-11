@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Form, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import useAuth from "../../../hooks/useAuth";
 import styles from './Register.module.css';
 
@@ -20,14 +21,16 @@ const Register = () => {
         const newUserData = { ...userData };
         newUserData[field] = value;
         setUserData(newUserData);
-        console.log(field, value);
     };
 
     const handleRegister = e => {
         e.preventDefault();
 
         if (userData.password !== userData.confirmPassword) {
-            alert('Passwords are not matched');
+            toast.warning(`Password not matched`, {
+                position: 'bottom-left',
+                autoClose: 2000
+            });
             return;
         }
         registerWithEmailAndPassword(userData.email, userData.password, userData.name, location, navigate);
@@ -94,7 +97,7 @@ const Register = () => {
                             }
 
                             {
-                                !user?.email && <div className="fs-6 mt-3">
+                                !user?.email && <div className="fs-6 mt-4">
                                     <p className="">Already have an account? <Link className={`${styles.defLink}`} to="/login">Login</Link> is very simple.</p>
                                 </div>
                             }
@@ -115,6 +118,8 @@ const Register = () => {
                         </div>
                     </Container>
             }
+
+            <ToastContainer />
         </div>
     );
 };
