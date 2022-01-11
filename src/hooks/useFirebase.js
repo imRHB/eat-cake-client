@@ -16,11 +16,14 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     // Register with email and password
-    const registerWithEmailAndPassword = (email, password, name, navigate) => {
+    const registerWithEmailAndPassword = (email, password, name, location, navigate) => {
         setLoading(true);
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const destination = location?.state?.from || '/';
+                navigate(destination);
+
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 saveUser(email, name, 'POST');
