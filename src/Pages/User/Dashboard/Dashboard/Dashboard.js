@@ -32,7 +32,7 @@ const Dashboard = () => {
 
                                         {
                                             user.email && !admin.admin && <>
-                                                <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
+                                                {/* <Link to="/dashboard"><span className="me-3">{dashboardIcon}</span>Dashboard</Link> */}
                                                 <Link to="my-order"><span className="me-3">{listIcon}</span>My Order</Link>
                                                 <Link to="add-review"><span className="me-3">{reviewIcon}</span>Add Review</Link>
                                             </>
