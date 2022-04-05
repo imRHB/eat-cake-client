@@ -81,7 +81,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName, method) => {
         const user = { email, name: displayName };
 
-        fetch('https://agile-tor-11686.herokuapp.com/users', {
+        fetch('https://eat-cake-server.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -126,7 +126,7 @@ const useFirebase = () => {
 
     // Admin status
     useEffect(() => {
-        fetch(`https://agile-tor-11686.herokuapp.com/users/${user?.email}`)
+        fetch(`https://eat-cake-server.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data));
     }, [user?.email]);

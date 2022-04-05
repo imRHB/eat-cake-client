@@ -23,7 +23,7 @@ const AddReview = () => {
         data.img = user?.photoURL;
         data.rating = rating;
 
-        fetch(`https://agile-tor-11686.herokuapp.com/add-review`, {
+        fetch(`https://eat-cake-server.herokuapp.com/add-review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

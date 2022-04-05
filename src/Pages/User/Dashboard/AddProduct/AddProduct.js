@@ -8,7 +8,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch(`https://agile-tor-11686.herokuapp.com/cake`, {
+        fetch(`https://eat-cake-server.herokuapp.com/cake`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

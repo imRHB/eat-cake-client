@@ -15,7 +15,7 @@ const MakeAdmin = () => {
 
         const user = { email };
 
-        fetch('https://agile-tor-11686.herokuapp.com/users/admin', {
+        fetch('https://eat-cake-server.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

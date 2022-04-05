@@ -49,7 +49,7 @@ const ChocolateFlavor = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`https://agile-tor-11686.herokuapp.com/flavor/Chocolate`)
+        fetch(`https://eat-cake-server.herokuapp.com/flavor/Chocolate`)
             .then(res => res.json())
             .then(data => {
                 setChocoCakes(data);

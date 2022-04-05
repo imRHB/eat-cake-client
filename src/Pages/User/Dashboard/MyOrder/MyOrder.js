@@ -12,7 +12,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`https://agile-tor-11686.herokuapp.com/orders/${user.email}`)
+        fetch(`https://eat-cake-server.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders, user.email]);
@@ -21,7 +21,7 @@ const MyOrder = () => {
         const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
         if (deleteConfirmation) {
-            fetch(`https://agile-tor-11686.herokuapp.com/orders/${cakeId}`, {
+            fetch(`https://eat-cake-server.herokuapp.com/orders/${cakeId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

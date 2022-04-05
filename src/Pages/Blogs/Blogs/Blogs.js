@@ -9,7 +9,7 @@ const Blogs = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch('https://agile-tor-11686.herokuapp.com/blogs')
+        fetch('https://eat-cake-server.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => {
                 setBlogs(data);

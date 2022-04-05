@@ -11,7 +11,7 @@ const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`https://agile-tor-11686.herokuapp.com/orders`)
+        fetch(`https://eat-cake-server.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders]);
@@ -19,7 +19,7 @@ const ManageOrder = () => {
     const handleUpdateStatus = (_id) => {
         const status = 'Delivered';
 
-        fetch(`https://agile-tor-11686.herokuapp.com/orders/${_id}`, {
+        fetch(`https://eat-cake-server.herokuapp.com/orders/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const ManageOrder = () => {
         const deleteConfirmation = window.confirm('Do you want to delete the product?');
 
         if (deleteConfirmation) {
-            fetch(`https://agile-tor-11686.herokuapp.com/orders/${cakeId}`, {
+            fetch(`https://eat-cake-server.herokuapp.com/orders/${cakeId}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

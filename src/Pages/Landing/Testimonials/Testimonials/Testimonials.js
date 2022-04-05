@@ -50,7 +50,7 @@ const Testimonials = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch('https://agile-tor-11686.herokuapp.com/reviews')
+        fetch('https://eat-cake-server.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

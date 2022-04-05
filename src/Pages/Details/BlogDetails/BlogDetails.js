@@ -12,7 +12,7 @@ const BlogDetails = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`https://agile-tor-11686.herokuapp.com/blogs/${id}`)
+        fetch(`https://eat-cake-server.herokuapp.com/blogs/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data);

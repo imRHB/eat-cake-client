@@ -21,7 +21,7 @@ const PlaceOrder = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(`https://agile-tor-11686.herokuapp.com/cake/${cakeId}`)
+        fetch(`https://eat-cake-server.herokuapp.com/cake/${cakeId}`)
             .then(res => res.json())
             .then(data => {
                 setOrderedCake(data);
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
         data.name = user?.displayName;
         data.email = user?.email;
 
-        fetch(`https://agile-tor-11686.herokuapp.com/orders`, {
+        fetch(`https://eat-cake-server.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
