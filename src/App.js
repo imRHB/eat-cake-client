@@ -21,6 +21,8 @@ import PrivateRoute from "./Pages/Routes/PrivateRoute/PrivateRoute";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Register from "./Pages/User/Register/Register";
+import Blogs from "./Pages/Blogs/Blogs/Blogs";
+import BlogDetails from "./Pages/Details/BlogDetails/BlogDetails";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="cake" element={<Cakes />} />
+            <Route path="blogs" element={<Blogs />} />
+            <Route path="blogs/:id" element={<BlogDetails />} />
             <Route path="cake/:id" element={<CakeDetails />} />
             <Route path="contact" element={<ContactForm />} />
             <Route path="place-order/:cakeId" element={<PrivateRoute>

@@ -62,7 +62,9 @@ const ManageProducts = () => {
 
                     <tbody>
                         {
-                            products.map((product, index) => <tr>
+                            products.map((product, index) => <tr
+                                key={product._id}
+                            >
                                 <td>{index + 1}</td>
                                 <td><img src={product.img} style={{ width: '64px', height: '64px', border: '1px solid gray', borderRadius: '4px' }} alt="" /></td>
                                 <td>{product.title}</td>

@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from "react-bootstrap";
-import Cake from "../Cake/Cake";
+import Blog from "../Blog/Blog";
 
-const Cakes = () => {
-    const [cakes, setCakes] = useState([]);
+const Blogs = () => {
+    const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
 
-        fetch('https://agile-tor-11686.herokuapp.com/cake')
+        fetch('https://agile-tor-11686.herokuapp.com/blogs')
             .then(res => res.json())
-            .then(result => {
-                setCakes(result);
+            .then(data => {
+                setBlogs(data);
                 setLoading(false);
             });
-    }, [])
+    }, []);
 
     return (
-        <div className="my-5 pb-5">
+        <div className="my-5">
             {
                 loading ? <Container style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Spinner animation="grow" size="sm" variant="secondary" className="mx-1" />
@@ -27,13 +27,12 @@ const Cakes = () => {
                 </Container>
                     :
                     <Container>
-                        <h2 className="text-center fw-bold text-uppercase my-5">Available Cake</h2>
-                        <Row xs={1} sm={1} md={2} lg={3} xl={4} className="g-4">
+                        <Row xs={1} sm={1} md={2} lg={2} xl={2} className="g-5">
                             {
-                                cakes.map(cake => <Cake
-                                    key={cake._id}
-                                    cake={cake}
-                                ></Cake>)
+                                blogs.map(blog => <Blog
+                                    key={blog._id}
+                                    blog={blog}
+                                ></Blog>)
                             }
                         </Row>
                     </Container>
@@ -42,4 +41,4 @@ const Cakes = () => {
     );
 };
 
-export default Cakes;
+export default Blogs;

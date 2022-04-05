@@ -2,18 +2,24 @@
     color: #333;
     /* background-color: #f1f1f1; */
 }
+
 .nav a {
+    padding: 0 4px;
     text-decoration: none;
     color: #8A2BE2;
 }
+
 .nav a:hover {
-    color: #4CAF50;
+    color: #8A2BE2;
+    background-color: #eee;
 }
+
 .navLink {
     font-size: 28px;
     margin-right: 16px;
     padding: 0;
 }
+
 .navLink:hover {
     color: #4CAF50;
 }

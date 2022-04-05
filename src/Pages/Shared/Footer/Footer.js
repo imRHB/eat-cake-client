@@ -45,6 +45,7 @@ const Footer = () => {
                             <Nav className={`${'flex-column'} ${styles.nav}`}>
                                 <Link to="/home">Home</Link>
                                 <Link to="/cake">Cake</Link>
+                                <Link to="/blogs">Blogs</Link>
                             </Nav>
                         </div>
                     </Col>

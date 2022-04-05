@@ -16,20 +16,22 @@ const ManageOrder = () => {
             .then(data => setOrders(data));
     }, [orders]);
 
-    const handleUpdateStatus = cakeId => {
-        fetch(`https://agile-tor-11686.herokuapp.com/orders`, {
+    const handleUpdateStatus = (_id) => {
+        const status = 'Delivered';
+
+        fetch(`https://agile-tor-11686.herokuapp.com/orders/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(cakeId)
+            body: JSON.stringify({ status })
         })
             .then(res => res.json())
             .then(result => {
 
             });
 
-        toast.success(`Order shipped successfully`, {
+        toast.success(`Order delivered successfully`, {
             position: 'bottom-left',
             autoClose: 2000
         });
@@ -82,7 +84,9 @@ const ManageOrder = () => {
 
                     <tbody>
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr
+                                key={order._id}
+                            >
                                 <td>{index + 1}</td>
                                 <td><img src={order.img} style={{ width: '72px', border: '1px solid gray', borderRadius: '4px' }} alt="" /></td>
                                 <td>{order.title}</td>

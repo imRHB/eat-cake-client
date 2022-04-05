@@ -32,6 +32,7 @@ const Navigation = () => {
                     <Nav className={`${'me-auto'} ${styles.navbarNav}`}>
                         <Link to="home">Home</Link>
                         <Link to="cake">Cake</Link>
+                        <Link to="blogs">Blogs</Link>
                         <Link to="contact">Contact</Link>
                     </Nav>
                     <Nav>
